@@ -4,22 +4,22 @@ pipeline {
 
     
     stages {
-         stage('build') {
+         stage('dependencies') {
           steps {
               sh 'npm install'
             }
           }
 
-        stage('start') {
+        stage('build') {
             steps {
-                sh 'echo npm start'
+                sh 'npm run build'
             }
         }
         
-        stage('Test') {
+        stage('Docker Image') {
             steps {
                
-                    sh "echo sudo-npm-test"
+                    sh "echo docker_build_-t_SCD-Lab11"
                 
             }
         }
@@ -28,13 +28,6 @@ pipeline {
             steps {
                
                     sh "echo sudo-docker-compose-up"
-                
-            }
-        }
-         stage('kill') {
-            steps {
-               
-                    sh "echo sudo-docker-compose-down"
                 
             }
         }
