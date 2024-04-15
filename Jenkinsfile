@@ -24,7 +24,7 @@ pipeline {
             }
         }
         
-        stage('Docker Comopse Up') {
+        stage('Docker Image Run') {
             steps {
                
                     sh "echo sudo-docker-compose-up"
